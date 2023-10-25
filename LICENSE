@@ -19,3 +19,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+day one command: 
+# rails g model User name:string photo:string bio:text posts_counter:ineger
+
+#rails generate model Like  author:references post:references text:text
+ 
+# rails generate model Post author:references{to_table:users} title:string text:text comments_counter:integer{default:0} likes_counter:integer{default:0}
+
+
+#  rails generate migration CreateLikes author:references{to_table:users} post:references{to_table:posts}
+
+
+
+#  rails generate migration CreateComments text:text author:references{to_table:users} post:references{to_table:posts}
+
+# rails generate migration CreateUsers name:string photo:string bio:text posts_counter:ineger
+
+
+
+class RenameUserIdToAuthorId < ActiveRecord::Migration[7.1]
+  def change
+     rename_column :posts, :user_id, :author_id 
+  end
+end
