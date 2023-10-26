@@ -4,14 +4,14 @@ class Post < ApplicationRecord
   has_many :likes
 
   after_save :update_user_posts_counter
-   
+
   private
 
   def update_user_posts_counter
     author.update(posts_counter: author.posts.count)
   end
 
-  def recent_comments(limit)
+  def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
 end
