@@ -5,15 +5,6 @@ RSpec.describe User, type: :model do
     User.create(name: 'Fatima', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'I am a software engineer.', posts_counter: 0)
   end
-  # Test most recent posts............
-
-  it 'returns the most recent 3 posts' do
-    subject.posts.create(title: 'Post 1', text: 'This is the first post.', comments_counter: 0, likes_counter: 0)
-    subject.posts.create(title: 'Post 2', text: 'This is the second post.', comments_counter: 0, likes_counter: 0)
-    subject.posts.create(title: 'Post 3', text: 'This is the third post.', comments_counter: 0, likes_counter: 0)
-    recent_posts = subject.recent_posts
-    expect(recent_posts.length).to eq(3)
-  end
   # Name must not be blank.
   it 'is invalid without a name' do
     subject.name = nil
@@ -37,5 +28,19 @@ RSpec.describe User, type: :model do
   it 'is invalid without a bio' do
     subject.bio = nil
     expect(subject).to_not be_valid
+  end
+
+   # Test most recent posts............
+it 'returns the 3 most recent posts' do
+  create_posts(subject, 5) # Helper method to create 5 posts for the subject
+  recent_posts = subject.recent_posts
+  expect(recent_posts.length).to eq(3)
+  expect(recent_posts).to eq(subject.posts.order(created_at: :desc).limit(3))
+end
+end
+
+def create_posts(subject, count)
+  count.times do |i|
+    subject.posts.create(title: "Post #{i + 1}", text: "This is the #{i + 1} post.", comments_counter: 0, likes_counter: 0)
   end
 end

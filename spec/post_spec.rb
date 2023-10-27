@@ -80,7 +80,18 @@ RSpec.describe Post, type: :model do
   end
 
   # test recent_comment
-  it 'should have a recent_comments method' do
-    expect(first_post).to respond_to(:recent_comments)
+
+  it 'should display the 5 most recent comments when there are more than 5 comments' do
+  post = first_post
+  create_comments(post, 10) # Helper method to create 10 comments for the post
+  recent_comments = post.recent_comments
+  expect(recent_comments.length).to eq(5)
+  expect(recent_comments).to eq(post.comments.order(created_at: :desc).limit(5))
+end
+  
+end
+def create_comments(post, count)
+  count.times do |i|
+    post.comments.create(post: post, author: second_user, text: "Comment #{i + 1}")
   end
 end
