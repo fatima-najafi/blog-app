@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     User.create(name: 'Fatima', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'I am a software engineer.', posts_counter: 0)
   end
+  # Test most recent posts............
 
   it 'returns the most recent 3 posts' do
     subject.posts.create(title: 'Post 1', text: 'This is the first post.', comments_counter: 0, likes_counter: 0)

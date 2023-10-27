@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:first_user) { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
-  let(:second_user) { User.create(name: 'Agneta', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Doctor from India.') }
+  let(:first_user) { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher.') }
+  let(:second_user) { User.create(name: 'Fatima', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Software developer.') }
   let(:first_post) { Post.create(author: first_user, title: 'Hello', text: 'This is my first post') }
   subject { Post.new(author: first_user, title: 'Hello', text: 'This is my first post') }
 
- # likes_counter unit tests ...................
+  # likes_counter unit tests ...................
 
- it 'updates likes_counter when a like is added' do
+  it 'updates likes_counter when a like is added' do
     initial_likes_counter = 0
     expect(subject.likes_counter).to eq(initial_likes_counter)
     subject.save
