@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
 
   # comments_counter unit test.....................
 
-   it 'updates comments_counter when a comment is added' do
+  it 'updates comments_counter when a comment is added' do
     initial_comments_counter = 0
     expect(subject.comments_counter).to eq(initial_comments_counter)
     subject.save
@@ -53,9 +53,9 @@ RSpec.describe Post, type: :model do
     subject.comments_counter = 5
     expect(subject).to be_valid
   end
- # likes_counter unit tests ...................
+  # likes_counter unit tests ...................
 
- it 'updates likes_counter when a like is added' do
+  it 'updates likes_counter when a like is added' do
     initial_likes_counter = 0
     expect(subject.likes_counter).to eq(initial_likes_counter)
     subject.save
