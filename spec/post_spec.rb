@@ -54,7 +54,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to be_valid
   end
  # likes_counter unit tests ...................
- 
+
  it 'updates likes_counter when a like is added' do
     initial_likes_counter = 0
     expect(subject.likes_counter).to eq(initial_likes_counter)
@@ -77,5 +77,4 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 5
     expect(subject).to be_valid
   end
-
 end
