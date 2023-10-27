@@ -80,6 +80,7 @@ RSpec.describe Post, type: :model do
 
   # test recent_comment
     it 'should have a recent_comments method' do
-    expect(first_post).to respond_to(:recent_comments)
+      expect(first_post).to respond_to(:recent_comments)
   end
+
 end
