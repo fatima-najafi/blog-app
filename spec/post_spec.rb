@@ -53,6 +53,7 @@ RSpec.describe Post, type: :model do
     subject.comments_counter = 5
     expect(subject).to be_valid
   end
+
   # likes_counter unit tests ...................
 
   it 'updates likes_counter when a like is added' do
@@ -79,8 +80,7 @@ RSpec.describe Post, type: :model do
   end
 
   # test recent_comment
-    it 'should have a recent_comments method' do
-      expect(first_post).to respond_to(:recent_comments)
+  it 'should have a recent_comments method' do
+    expect(first_post).to respond_to(:recent_comments)
   end
-
 end
