@@ -77,4 +77,9 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 5
     expect(subject).to be_valid
   end
+
+  # test recent_comment
+    it 'should have a recent_comments method' do
+    expect(first_post).to respond_to(:recent_comments)
+  end
 end
