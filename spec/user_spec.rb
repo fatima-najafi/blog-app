@@ -30,17 +30,18 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-   # Test most recent posts............
-it 'returns the 3 most recent posts' do
-  create_posts(subject, 5) # Helper method to create 5 posts for the subject
-  recent_posts = subject.recent_posts
-  expect(recent_posts.length).to eq(3)
-  expect(recent_posts).to eq(subject.posts.order(created_at: :desc).limit(3))
-end
+  # Test most recent posts............
+  it 'returns the 3 most recent posts' do
+    create_posts(subject, 5) # Helper method to create 5 posts for the subject
+    recent_posts = subject.recent_posts
+    expect(recent_posts.length).to eq(3)
+    expect(recent_posts).to eq(subject.posts.order(created_at: :desc).limit(3))
+  end
 end
 
 def create_posts(subject, count)
   count.times do |i|
-    subject.posts.create(title: "Post #{i + 1}", text: "This is the #{i + 1} post.", comments_counter: 0, likes_counter: 0)
+    subject.posts.create(title: "Post #{i + 1}", text: "This is the #{i + 1} post.", comments_counter: 0,
+                         likes_counter: 0)
   end
 end
