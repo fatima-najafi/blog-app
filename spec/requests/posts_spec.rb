@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  
   describe 'GET /index' do
     before do
       get user_posts_path(user_id: 1)
@@ -37,7 +36,4 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Individual Posts Details')
     end
   end
-  
- 
 end
-
