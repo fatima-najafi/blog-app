@@ -3,7 +3,5 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    puts params
-  end
+  def show; end
 end
