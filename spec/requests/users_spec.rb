@@ -1,27 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
+RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before do
-      get user_posts_path(user_id: 1)
+      get users_path
     end
 
     it 'returns correct status' do
-      expect(response).to have_http_status(:success)
+      expect(response.status).to eq(200)
     end
 
     it 'renders the correct template' do
-      expect(response).to render_template('posts/index')
+      expect(response).to render_template('users/index')
     end
 
     it 'returns the correct placeholder text' do
-      expect(response.body).to include('Posts List or here is a list of posts for a given user')
+      expect(response.body).to include('Users List')
     end
   end
 
   describe 'GET /show' do
     before do
-      get user_post_path(user_id: 1, id: 1)
+      get '/users/1'
     end
 
     it 'returns correct status' do
@@ -29,11 +29,11 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct template' do
-      expect(response).to render_template('posts/show')
+      expect(response).to render_template('users/show')
     end
 
     it 'returns the correct placeholder' do
-      expect(response.body).to include('Individual Posts Details')
+      expect(response.body).to include('Individual Users Details')
     end
   end
 end

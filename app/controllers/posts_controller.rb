@@ -3,7 +3,5 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-    puts params
-  end
+  def show; end
 end
