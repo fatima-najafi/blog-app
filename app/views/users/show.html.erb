@@ -1,1 +1,16 @@
-<h1>Individual Users Details</h1>
+<section class="user-section">
+  <div class="user-card">
+    <div class="user-img">
+      <img src=<%= @user.photo %> width="100px" hieght="100px" class="user-photo">
+    </div>
+     <div class="user-info">
+      <h2><%= @user.name%></h2>
+      <h2 class="post-counter">Number of post:<%= @user.posts_counter%></h2>
+     </div>
+  </div>
+       <div class="bio-container">
+          <h2 >Bio</h2>
+          <p><%= @user.bio%></p>
+       </div>
+   </div>
+</section>
