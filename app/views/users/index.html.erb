@@ -1,2 +1,9 @@
-<h1>Users List</h1>
+<%# ul  renders a partial called _user.html.erb from the partials directory for each user in the @users collection. %>
+<%# The render method automatically assigns each element of the collection to a local variable within the partial. %>
+<h1 class= "user-title">Welcome to User Page</h1>
+<div class="user-container">
+  <ul>
+    <%= render partial:'partials/user', collection:@users%>  
+  </ul>
+</div>
 
