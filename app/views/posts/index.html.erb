@@ -1,2 +1,35 @@
-<h1>Posts List or here is a list of posts for a given user</h1>
+<h1 class="post-title"><%= @user.name%>'s Posts</h1>
+   <div class="user-card" >
+        <div class="user-img">
+            <img src=<%= @user.photo %> width="100px"  height = "100px" class="user-photo">
+        </div>
+        <div class="user-info">
+            <h2><%= @user.name %></h2>
+            <h2 class="post-counter">Number of posts: <%= @user.posts_counter %></h2>
+        </div>
+    </div>
 
+</div>
+<div class="post-container">
+    <% @posts.each do |post|%>
+    <%= link_to user_post_path(user_id: post.author_id, id: post.id) do%>
+        <div class="post-card-container">
+             <div class="post-card">
+                <h2><%= post.title %></h2>
+                <p><%= post.text %></p>
+                <div class="reactions">
+                    <span>Comments <%= post.comments_counter%> </span>
+                    <span>Likes <%= post.likes_counter%> </span>
+                </div>
+            </div>
+            <h4 class="comment-title">Comments</h4>
+            <div class="comment-container">
+                <% post.recent_comments.each do |comment|%>
+                    <span><%= comment.author.name%> : <%= comment.text%></span>
+                <% end %>
+            </div>
+        </div>
+         
+        <% end %>
+    <% end %>
+</div>

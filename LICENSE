@@ -27,19 +27,6 @@ day one command:
  
 # rails generate model Post author:references{to_table:users} title:string text:text comments_counter:integer{default:0} likes_counter:integer{default:0}
 
+#  rails generate model CreateComments text:text author:references{to_table:users} post:references{to_table:posts}
 
-#  rails generate migration CreateLikes author:references{to_table:users} post:references{to_table:posts}
-
-
-
-#  rails generate migration CreateComments text:text author:references{to_table:users} post:references{to_table:posts}
-
-# rails generate migration CreateUsers name:string photo:string bio:text posts_counter:ineger
-
-
-
-class RenameUserIdToAuthorId < ActiveRecord::Migration[7.1]
-  def change
-     rename_column :posts, :user_id, :author_id 
-  end
-end
+ the collection: @users parameter in the render method allows the partials/user partial to access and display information from the @users collection. The information flows from the @users collection to the partial, enabling you to display user-specific information for each user in the rendered output. The partial does not send any information back to the collection or modify the original @users collection.

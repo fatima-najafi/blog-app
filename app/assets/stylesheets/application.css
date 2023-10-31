@@ -13,3 +13,136 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.user-title {
+  text-align: center;
+}
+
+.user-card {
+  display: flex;
+  margin: 20px auto 20px auto;
+  width: 80%;
+}
+
+.user-info {
+  margin: 0 10px 0 10px;
+  border: 1px solid black;
+  flex: 1;
+}
+
+.user-info h2 {
+  margin: 10px 0 10px 20px;
+  color: black;
+}
+
+.post-counter {
+  text-align: end;
+  padding-right: 10px;
+}
+
+.bio-container {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.bio-container h2 {
+  margin-bottom: 20px;
+}
+
+.bio-container p {
+  font-size: 16px;
+}
+
+.user-photo {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.post-container {
+  width: 80%;
+  padding: 0;
+  margin: 1.2rem auto;
+}
+
+.post-card {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.post-card h2 {
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reactions {
+  text-align: end;
+}
+
+.reactions span {
+  padding: 6px;
+  margin-right: 10px;
+}
+
+.all-post {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.post-title {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.comment-container {
+  border: 1px solid black;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.post-body {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.post-header ul {
+  display: flex;
+}
+
+.post-header li {
+  margin-right: 10px;
+  list-style: none;
+}
+
+.comment-title {
+  margin-bottom: 0.7rem;
+}
+
+.post-card-container {
+  margin: 2rem 0 4rem 0;
+  border-bottom: 1px solid black;
+}

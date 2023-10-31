@@ -1,0 +1,16 @@
+<%# Partials allow you to break down complex views into smaller %>
+<%# reuse view code across different views or layouts %>
+<%# This partial can be rendered in different views %>
+<%# user is a local variable used within the partial to represent an individual user object during iteration %>
+<%= link_to user do%>
+<li class="user-card">
+   <div class ="user-img">
+     <img src= <%= user.photo%> class="user-photo">
+   </div>
+   <div class="user-info">
+      <h2><%= user.name%></h2>
+      <h2 class="post-counter"> Number of posts: <%= user.posts_counter%></h2>
+     
+   </div>
+</li>
+<% end %>

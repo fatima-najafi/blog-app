@@ -1,1 +1,18 @@
-<h1>Individual Posts Details</h1>
+<div class="post-container">
+   <div class="post-header">
+       <h2><%= @post.title%> By <%= @post.author.name%></h2>
+         <ul>
+             <li>Comments:<%= @post.comments_counter%></li>
+             <li>Likes:<%=@post.likes_counter%></li>
+         </ul>
+   </div>
+    <h4 class="comment-title"> Comments</h4>
+    <div class="post-body">
+       <%=@post.text%>
+    </div>
+     <div class="comment-container">
+        <%@post.comments.each do |comment|%>
+          <span> <%= comment.author.name%> :<%= comment.text%></span>
+          <%end%>
+     </div>
+</div>

@@ -1,2 +1,11 @@
-<h1>Users List</h1>
+<%# The render method is used to render the partials/user partial for each user object in the @users collection. %>
+<%# The render method automatically assigns each element of the collection to a local variable within the partial. %>
+<%# @users is an instance variable that typically holds a collection of user objects. %>
+
+<h1 class= "user-title">Welcome to User Page</h1>
+<div class="user-container">
+  <ul>
+    <%= render partial:'partials/user', collection:@users%>  
+  </ul>
+</div>
 
