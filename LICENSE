@@ -27,19 +27,5 @@ day one command:
  
 # rails generate model Post author:references{to_table:users} title:string text:text comments_counter:integer{default:0} likes_counter:integer{default:0}
 
+#  rails generate model CreateComments text:text author:references{to_table:users} post:references{to_table:posts}
 
-#  rails generate migration CreateLikes author:references{to_table:users} post:references{to_table:posts}
-
-
-
-#  rails generate migration CreateComments text:text author:references{to_table:users} post:references{to_table:posts}
-
-# rails generate migration CreateUsers name:string photo:string bio:text posts_counter:ineger
-
-
-
-class RenameUserIdToAuthorId < ActiveRecord::Migration[7.1]
-  def change
-     rename_column :posts, :user_id, :author_id 
-  end
-end
