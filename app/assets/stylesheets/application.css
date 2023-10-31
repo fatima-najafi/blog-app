@@ -31,11 +31,6 @@
   width: 80%;
 }
 
-.user-photo {
-  width: 100px;
-  height: 100px;
-}
-
 .user-info {
   margin: 0 10px 0 10px;
   border: 1px solid black;
@@ -69,6 +64,8 @@
 
 .user-photo {
   object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
 
 .post-container {
