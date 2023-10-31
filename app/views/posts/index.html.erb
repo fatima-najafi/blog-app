@@ -1,2 +1,21 @@
-<h1>Posts List or here is a list of posts for a given user</h1>
 
+<h1 class="post-title"><%= @user.name%>'s Posts</h1>
+ <div class="user-card">
+    <div class="user-img">
+      <img src=<%= @user.photo %> width="100px" hieght="100px" class="user-photo">
+    </div>
+     <div class="user-info">
+      <h2><%= @user.name%></h2>
+      <h2 class="post-counter">Number of post:<%= @user.posts_counter%></h2>
+     </div>
+  </div>
+
+  <div class="post-container">
+  <%@posts.each do |post|%>
+  <%= link_to user_post_path(user_id:post.author_id,id:post_id) do%>
+  <div>
+  
+  
+  </div>
+  
+  </div>
