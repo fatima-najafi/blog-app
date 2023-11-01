@@ -15,4 +15,11 @@
           <span> <%= comment.author.name%> :<%= comment.text%></span>
           <%end%>
      </div>
+
+        <div class="like-comment-container">
+            <%= form_with model: @like, url:user_post_likes_path(post_id: @post.id) do |l| %>
+                <%= l.submit  "Like", class:"new-post-btn submit-btn"%>
+            <% end %>
+            <%= link_to "Add a comment", new_user_post_comment_path(user_id: @post.author.id, post_id: @post.id), class: 'new-post-btn submit-btn' %>
+    </div>
 </div>
