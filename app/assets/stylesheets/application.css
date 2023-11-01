@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +24,11 @@
 
 .user-title {
   text-align: center;
+}
+
+.user-card-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .user-card {
@@ -71,13 +77,13 @@
 .post-container {
   width: 80%;
   padding: 0;
-  margin: 1.2rem auto;
+  margin: 1.2rem auto 0 auto;
 }
 
 .post-card {
   border: 1px solid black;
   padding: 10px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .post-card h2 {
@@ -143,6 +149,72 @@
 }
 
 .post-card-container {
-  margin: 2rem 0 4rem 0;
-  border-bottom: 1px solid black;
+  margin: 2rem 0 0.5rem 0;
+}
+
+.new-post-btn {
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.like-comment-container {
+  display: flex;
+  align-items: center;
+}
+
+.post-btn {
+  width: 150px;
+  margin: 0.3rem auto;
+  background-color: black;
+  color: white;
+}
+
+.new-post-section {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-post-container {
+  width: 40%;
+  border: 1px solid black;
+  padding: 20px 40px;
+}
+
+.new-post-container form {
+  margin: 0.3rem auto;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+}
+
+.new-post-container h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#post_title {
+  margin: 1rem auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#post_text,
+#comment_text {
+  margin: 0.5rem;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.submit-btn {
+  background-color: black;
+  color: white;
 }
