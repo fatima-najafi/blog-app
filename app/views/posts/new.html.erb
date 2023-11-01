@@ -3,7 +3,7 @@
        <h1>Add a new post</h1>
        <%= form_with model:@post, url:user_posts_path do |form|%>
         <%= form.label :title%>
-        <%= form.text.filed :title%><br>
+        <%= form.text_field  :title%><br>
 
         <div class="text-container">
           <%= form.label :text%>
