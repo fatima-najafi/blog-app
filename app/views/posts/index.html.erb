@@ -1,4 +1,5 @@
 <h1 class="post-title"><%= @user.name%>'s Posts</h1>
+  <div class="user-card-container">
    <div class="user-card" >
         <div class="user-img">
             <img src=<%= @user.photo %> width="100px"  height = "100px" class="user-photo">
@@ -8,8 +9,9 @@
             <h2 class="post-counter">Number of posts: <%= @user.posts_counter %></h2>
         </div>
     </div>
+          <%= link_to "Add a new post", new_user_post_path(user_id: @user.id), class: "new-post-btn post-btn"%>
+  </div>
 
-</div>
 <div class="post-container">
     <% @posts.each do |post|%>
     <%= link_to user_post_path(user_id: post.author_id, id: post.id) do%>
