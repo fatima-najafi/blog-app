@@ -9,8 +9,32 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+   <style>
+      .flash {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
 
+      .flash-notice {
+        background-color: #e6f7ff;
+        color: #007bff;
+      }
+
+      .flash-alert {
+        background-color: #ffe6e6;
+        color: #dc3545;
+      }
+    </style>
   <body>
+  <%# key represents the type of flash message (e.g., notice, alert, etc.), 
+  and the value represents the actual message content. %>
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

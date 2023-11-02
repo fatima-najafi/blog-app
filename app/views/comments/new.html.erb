@@ -1,0 +1,15 @@
+<section class="new-post-section">
+<div class="new-post-container">
+        <h1>Add a new comment</h1>
+<%= form_with model: @comment, url: user_post_comments_path do |c| %>
+<div class="text-container">
+     <%= c.label :text%>
+    <%= c.text_area :text, cols: 30, rows:1%><br>
+</div>
+
+    <%= c.submit "Submit", class:"new-post-btn submit-btn" %>
+<% end %>
+</div>
+
+</section>
+
