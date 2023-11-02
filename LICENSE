@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 day one command: 
-# rails g model User name:string photo:string bio:text posts_counter:ineger
+# rails g model User name:string photo:string bio:text posts_counter:integer
 
 #rails generate model Like  author:references post:references text:text
  

@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  # In the new action, a new instance of the Comment
+  #  model is created and assigned to the @comment instance variable. 
+  # This is typically used when you want to render a form for creating a new comment. 
+  # The new.html.erb view can then access this instance variable to build the form.
   def new
     @comment = Comment.new
   end
