@@ -18,9 +18,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author =  User.find(params[:user_id])
+    @post.author = User.find(params[:user_id])
 
     if @post.save
+      flash[:notice] = 'Post created successfully!'
       redirect_to user_posts_path(id: @post.id)
     else
       flash[:alert] = 'Cannot create a new post'
