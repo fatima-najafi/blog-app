@@ -1,31 +1,32 @@
-<section class="user-section">
-  <div class="user-card">
-    <div class="user-img">
-      <img src=<%= @user.photo %> width="100px" hieght="100px" class="user-photo">
+ <section class="user-section">
+    <div class="user-card" >
+        <div class="user-img">
+            <img src=<%= @user.photo %> width="100px"  height = "100px" class="user-photo">
+        </div>
+        <div class="user-info">
+            <h2><%= @user.name %></h2>
+            <h2 class="post-counter">Number of posts: <%= @user.posts_counter %></h2>
+        </div>
     </div>
-     <div class="user-info">
-      <h2><%= @user.name%></h2>
-      <h2 class="post-counter">Number of post:<%= @user.posts_counter%></h2>
+
+     <div class="bio-container">
+        <h2>Bio</h2>
+        <p><%=  @user.bio%></p>
      </div>
-  </div>
-       <div class="bio-container">
-          <h2 >Bio</h2>
-          <p><%= @user.bio%></p>
-       </div>
-</section>
-<section class="post-section">
-  <div class="post-container">
-    <% @user.recent_posts.each do |post|%>   
-       <div class="post-card">
-             <h2><%= link_to post.title, user_post_path(@user, post) %></h2>
-            <p><%= post.text%></p>
-             
-             <div class="reactions">
-                <span>Comments<%= post.comments_counter%></span>
-                <span>Likes <%= post.likes_counter%></span>
-             </div>
-       </div>
-       <% end%>  
-  </div>
+ </section>
+ <section class="post-section">
+    <div class="post-container">
+        <% @user.recent_posts.each do |post|%>
+            <div class="post-card">
+                <h2><%= link_to post.title, user_post_path(@user, post) %></h2>
+                <p><%= post.text %></p>
+                <div class="reactions">
+                    <span>Comments <%= post.comments_counter%> </span>
+                    <span>Likes <%= post.likes_counter%> </span>
+                </div>
+            </div>
+        <% end%>
+    </div>
     <%= link_to "See all posts", user_posts_path(user_id: @user.id), class: "all-post" %>
-</section>
+ </section>
+ 
