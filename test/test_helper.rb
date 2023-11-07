@@ -1,7 +1,7 @@
 # ENV['RAILS_ENV'] ||= 'test'
 # require_relative '../config/environment'
 # require 'rails/test_help'
-# #add new 
+# #add new
 # require 'capybara/rails'
 # require 'capybara/minitest'
 # require 'selenium/webdriver'
@@ -40,7 +40,7 @@ class ActiveSupport::TestCase
 
   Capybara.register_driver :selenium_chrome do |app|
     options = Selenium::WebDriver::Chrome::Options.new(args: ['no-sandbox'])
-    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options:)
   end
 
   Capybara.javascript_driver = :selenium_chrome
