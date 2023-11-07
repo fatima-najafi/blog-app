@@ -1,10 +1,10 @@
-require 'capybara/rails'
+require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
   before do
-    @user1 = User.create(name: 'Donia', photo: 'https://via.placeholder.com/150', bio: 'I love coding!',
+    @user1 = User.create(name: 'Tom', photo: 'https://via.placeholder.com/150', bio: 'I love coding!',
                          posts_counter: 2)
-    @user2 = User.create(name: 'Jane', photo: 'https://via.placeholder.com/150', bio: 'I love hiking!',
+    @user2 = User.create(name: 'Sana', photo: 'https://via.placeholder.com/150', bio: 'I love reading!',
                          posts_counter: 0)
   end
 
