@@ -114,7 +114,11 @@ Run: ***Not Available for now***
 - Twitter: [@fatima-najafi](https://twitter.com/FatimaNajafi6)
 - LinkedIn: [@fatima-najafi](https://www.linkedin.com/in/fatima-najafi/)
 
+👤 **Zilola Nazarova**
 
+- GitHub: [@Zilola-Nazarova](https://github.com/Zilola-Nazarova)
+- Twitter: [@NazarovaZi](https://twitter.com/NazarovaZi)
+- LinkedIn: [in/NazarovaZi](https://www.linkedin.com/in/zilola-nazarova)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
