@@ -2,7 +2,11 @@
 <%# The render method automatically assigns each element of the collection to a local variable within the partial. %>
 <%# @users is an instance variable that typically holds a collection of user objects. %>
 
-<h1 class= "user-title">Welcome to User Page</h1>
+<div class = " flex justify-center items-center">
+    <h1 class="user-title font-bold text-4xl my-10 me-4"> Welcome To User Page</h1>
+<%= link_to "Log Out", sign_out_user_path %>
+</div>
+
 <div class="user-container">
   <ul>
     <%= render partial:'partials/user', collection:@users%>  

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
+  devise_for :users
   get 'comments/new'
   get 'comments/create'
   get 'likes/new'
