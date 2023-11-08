@@ -6,10 +6,12 @@
              <li>Likes:<%=@post.likes_counter%></li>
          </ul>
    </div>
+   
     <h4 class="comment-title"> Comments</h4>
     <div class="post-body">
        <%=@post.text%>
     </div>
+
      <div class="comment-container">
         <%@post.comments.each do |comment|%>
           <span> <%= comment.author.name%> :<%= comment.text%></span>
